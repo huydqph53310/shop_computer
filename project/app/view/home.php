@@ -100,7 +100,7 @@
                 <?php if (!isset($_SESSION["username"])) { ?>
                     <a href="?wh=reg" class="text-white">Tài khoản</a>
                 <?php } else { ?>
-                    <a href="?wh=reg" class="text-white">Xin Chào <?= $_SESSION["username"] ?></a>
+                    <a href="?wh=logout" class="text-white">Xin Chào <?= $_SESSION["username"] ?></a>
                 <?php } ?>
             </div>
         </div>

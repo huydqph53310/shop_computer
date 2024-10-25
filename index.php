@@ -31,6 +31,9 @@ switch ($Admicontroller->GETURL()) {
     case "reg":
         $Admicontroller->Regsiter();
         break;
+    case "logout":
+        $Admicontroller->Logout();
+        break;
     default:
         echo "404 not found";
         break;
