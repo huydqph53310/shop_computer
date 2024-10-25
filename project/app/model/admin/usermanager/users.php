@@ -1,7 +1,7 @@
 <?php
 class users
 {
-    public $id, $name, $username, $password, $email, $phone, $action, $ban;
+    public $id, $name, $username, $password, $email, $phone, $action, $ban, $premium, $johndate, $point;
 
     public function __construct(
         $id = null,
@@ -11,7 +11,10 @@ class users
         $email = null,
         $phone = null,
         $action = null,
-        $ban = null
+        $ban = null,
+        $premium = null,
+        $johndate = null,
+        $point = null
     ) {
         $this->id = $id;
         $this->name = $name;
@@ -21,5 +24,8 @@ class users
         $this->phone = $phone;
         $this->action = $action;
         $this->ban = $ban;
+        $this->premium = $premium;
+        $this->johndate = $johndate;
+        $this->point = $point;
     }
 }

@@ -32,6 +32,7 @@ class AdminController
                     if (($_POST["username"] ==  $data->username) && ($_POST["password"] == $data->password)) {
                         $tbsus = "Đăng Nhập thành công";
                         $_SESSION["username"] = $_POST["username"];
+                        $_SESSION["id"] = $data->id;
                         header("Location: ?wh=");
                     } else {
                         $tberr = "Thông tin tài khoản mật khẩu không chính sác!";
@@ -114,6 +115,14 @@ class AdminController
         if (isset($_GET["wh"])) {
             $wh = $_GET["wh"];
             return $wh;
+        }
+    }
+    public function GETID()
+    {
+        $id = "";
+        if (isset($_GET["id"])) {
+            $id = $_GET["id"];
+            return $id;
         }
     }
 }

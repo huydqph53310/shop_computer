@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3307
--- Generation Time: Oct 25, 2024 at 05:21 AM
+-- Generation Time: Oct 25, 2024 at 05:53 PM
 -- Server version: 8.0.30
 -- PHP Version: 8.1.10
 
@@ -104,24 +104,27 @@ CREATE TABLE `users` (
   `email` varchar(50) NOT NULL,
   `phone` varchar(10) NOT NULL,
   `action` int NOT NULL DEFAULT '0',
-  `ban` int NOT NULL DEFAULT '0'
+  `ban` int NOT NULL DEFAULT '0',
+  `premium` int NOT NULL DEFAULT '0',
+  `ngaythamgia` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `point` int NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`users_id`, `name`, `username`, `password`, `email`, `phone`, `action`, `ban`) VALUES
-(1, 'doquochuy', 'huydz', 'huyde', 'huydqph53310@gmail.com', '0123456789', 0, 0),
-(2, 'doquochuy', 'huydz', 'huydz', '123', '0123456789', 0, 0),
-(3, 'doquochuy', 'huydz', 'huyde', 'huydqph53310@gmail.com', '0123456789', 0, 0),
-(4, 'doquochuy', 'Admin', '123', 'huy02112004@gmail.com', '0865720862', 0, 0),
-(5, 'Bảo Hiểm', 'Nguyen Quoc Anh', '123', 'huy02112004@gmail.com', '0865720862', 0, 0),
-(6, 'Đỗ Quốc Huy', 'Admin', '123', 'huy02112004@gmail.com', '0865720862', 0, 0),
-(7, 'Đỗ Quốc Huy', 'Admin1', '12345', 'Admin.runsytem.mod@huydev.id.vn', '0865720862', 0, 0),
-(8, 'Đỗ Quốc Huy', 'Admin1', '123456', '1.a@gmail.com', '0865720862', 0, 0),
-(9, 'Đỗ Quốc Huy', 'Đỗ Quốc Huy', '123123', 'huy02112004@gmail.com', '0865720862', 0, 0),
-(10, 'doquochuy', 'Nguyen Quoc Anh', '123', 'huy02112004@gmail.com', '0865720862', 0, 0);
+INSERT INTO `users` (`users_id`, `name`, `username`, `password`, `email`, `phone`, `action`, `ban`, `premium`, `ngaythamgia`, `point`) VALUES
+(1, 'doquochuy', 'huydz', 'huyde', 'huydqph53310@gmail.com', '0123456789', 0, 0, 0, '2024-10-26 00:46:33', 0),
+(2, 'doquochuy', 'huydz', 'huydz', '123', '0123456789', 0, 0, 0, '2024-10-26 00:46:33', 0),
+(3, 'doquochuy', 'huydz', 'huyde', 'huydqph53310@gmail.com', '0123456789', 0, 0, 0, '2024-10-26 00:46:33', 0),
+(4, 'doquochuy', 'Admin', '123', 'huy02112004@gmail.com', '0865720862', 0, 0, 0, '2024-10-26 00:46:33', 0),
+(5, 'Bảo Hiểm', 'Nguyen Quoc Anh', '123', 'huy02112004@gmail.com', '0865720862', 0, 0, 0, '2024-10-26 00:46:33', 0),
+(6, 'Đỗ Quốc Huy', 'Admin', '123', 'huy02112004@gmail.com', '0865720862', 0, 0, 0, '2024-10-26 00:46:33', 0),
+(7, 'Đỗ Quốc Huy', 'Admin1', '12345', 'Admin.runsytem.mod@huydev.id.vn', '0865720862', 0, 0, 0, '2024-10-26 00:46:33', 0),
+(8, 'Đỗ Quốc Huy', 'Admin1', '123456', '1.a@gmail.com', '0865720862', 0, 0, 0, '2024-10-26 00:46:33', 0),
+(9, 'Đỗ Quốc Huy', 'Đỗ Quốc Huy', '123123', 'huy02112004@gmail.com', '0865720862', 0, 0, 0, '2024-10-26 00:46:33', 0),
+(10, 'doquochuy', 'Nguyen Quoc Anh', '123', 'huy02112004@gmail.com', '0865720862', 0, 0, 0, '2024-10-26 00:46:33', 0);
 
 --
 -- Indexes for dumped tables

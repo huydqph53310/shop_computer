@@ -11,12 +11,14 @@ include_once "project/app/model/admin/usermanager/datauser.php";
 session_start();
 //controller
 include_once "project/app/controller/Admin/AdminController.php";
+include_once "project/app/controller/Client/ClientController.php";
 //include_once "project/app/controller/Admin/SwitchQuery.php";
-
 
 //include_once
 // gọi thằng cha trở về
 $Admicontroller = new AdminController();
+$Clientcontroller = new ClientController();
+
 // logic điều hướng
 switch ($Admicontroller->GETURL()) {
     case "":
@@ -34,7 +36,10 @@ switch ($Admicontroller->GETURL()) {
     case "logout":
         $Admicontroller->Logout();
         break;
+    case "client":
+        $Clientcontroller->Profile();
+        break;
     default:
-        echo "404 not found";
+        include "project/app/view/404.php";
         break;
 }

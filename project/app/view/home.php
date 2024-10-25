@@ -82,6 +82,11 @@
         .col-md-3 {
             padding-top: 20px;
         }
+
+        .link {
+            text-decoration: none;
+            color: black;
+        }
     </style>
 </head>
 
@@ -98,11 +103,23 @@
             </div>
             <div class="user">
                 <?php if (!isset($_SESSION["username"])) { ?>
-                    <a href="?wh=reg" class="text-white">Tài khoản</a>
+                    <div class="account-popup">
+                        <div class="d-flex">
+                            <a href="?wh=login" class="btn btn-light me-2 shadow-sm border border-primary text-primary d-flex align-items-center">
+                                <i class="bi bi-box-arrow-in-right me-1"></i> Đăng nhập
+                            </a>
+                            <a href="?wh=reg" class="btn btn-primary shadow-sm d-flex align-items-center">
+                                <i class="bi bi-person-plus-fill me-1"></i> Đăng ký
+                            </a>
+                        </div>
+                    </div>
                 <?php } else { ?>
-                    <a href="?wh=logout" class="text-white">Xin Chào <?= $_SESSION["username"] ?></a>
+                    <a href="?wh=client&?id=<?= $_SESSION["id"] ?>" class="text-decoration-none text-dark d-flex align-items-center">
+                        <i class="bi bi-person-circle me-2"></i> Xin chào, <?= $_SESSION["username"] ?>
+                    </a>
                 <?php } ?>
             </div>
+
         </div>
     </header>
 
@@ -166,12 +183,14 @@
             <h2 class="section-title">Danh mục sản phẩm</h2>
             <div class="row">
                 <div class="col-md-3">
-                    <div class="card">
-                        <img src="https://via.placeholder.com/200" class="card-img-top" alt="Category 1">
-                        <div class="card-body text-center">
-                            <h5 class="card-title">Laptop</h5>
+                    <a href="?wh=login?id=10" class="link">
+                        <div class="card">
+                            <img src="https://via.placeholder.com/200" class="card-img-top" alt="Category 1">
+                            <div class="card-body text-center">
+                                <h5 class="card-title">Laptop</h5>
+                            </div>
                         </div>
-                    </div>
+                    </a>
                 </div>
                 <div class="col-md-3">
                     <div class="card">

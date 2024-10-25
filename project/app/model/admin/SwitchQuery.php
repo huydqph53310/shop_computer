@@ -51,11 +51,38 @@ class SwitchQuery extends ConnectDatabase
     public function Login($iduser)
     {
         try {
-            $sql = "SELECT email, username, password FROM `users` WHERE username like '%$iduser%'";
+            $sql = "SELECT users_id,email, username, password FROM `users` WHERE username like '%$iduser%'";
             $this->connect->query("USE " . parent::DB_NAME);
             $dataCheck = $this->connect->query($sql)->fetch();
             if ($dataCheck != false) {
-                $userLogin = new users(null, null, $dataCheck["username"], $dataCheck["password"], $dataCheck["email"]);
+                $userLogin = new users($dataCheck["users_id"], null, $dataCheck["username"], $dataCheck["password"], $dataCheck["email"]);
+                return $userLogin;
+            }
+        } catch (Exception $e) {
+            echo $e->getMessage();
+        }
+    }
+
+    public function FindUser($iduser)
+    {
+        try {
+            $this->connect->query("USE " . parent::DB_NAME);
+            $sql = "SELECT * FROM `users` WHERE users_id = $iduser";
+            $dataCheck = $this->connect->query($sql)->fetch();
+            if ($dataCheck != false) {
+                $userLogin = new users(
+                    $dataCheck["users_id"],
+                    $dataCheck["name"],
+                    $dataCheck["username"],
+                    $dataCheck["password"],
+                    $dataCheck["email"],
+                    $dataCheck["phone"],
+                    $dataCheck["action"],
+                    $dataCheck["ban"],
+                    $dataCheck["premium"],
+                    $dataCheck["ngaythamgia"],
+                    $dataCheck["point"]
+                );
                 return $userLogin;
             }
         } catch (Exception $e) {
