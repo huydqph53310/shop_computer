@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Đăng nhập tài khoản</title>
+    <title>Đăng Ký tài khoản</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
         /* Custom styles */
@@ -90,7 +90,7 @@
             display: block;
         }
 
-        .account-dropdown a {
+        a {
             color: #343a40;
             text-decoration: none;
             padding: 10px 0;
@@ -116,7 +116,7 @@
     <header class="custom-header">
         <div class="container d-flex justify-content-between align-items-center py-3">
             <div class="logo">
-                <h1 class="h3" style="color:#8a4de8;">HuyDev</h1>
+                <a class="h3" style="color:#8a4de8;" href="?wh=">HuyDev</a>
             </div>
             <div class="search-bar w-50">
                 <input type="text" class="form-control" placeholder="Tìm kiếm sản phẩm...">
@@ -133,6 +133,16 @@
     <!-- Main Content -->
     <div class="main-container">
         <div class="login-container">
+            <?php if ($tbsus != "") { ?>
+                <div class="alert alert-success mt-3" role="alert">
+                    <?php echo $tbsus; ?>
+                </div>
+            <?php } ?>
+            <?php if ($tberr != ""): ?>
+                <div class="alert alert-danger mt-3" role="alert">
+                    <?php echo $tberr; ?>
+                </div>
+            <?php endif; ?>
             <h2 class="login-title">Đăng Ký</h2>
             <form id="loginForm" action="" method="post">
                 <div class="mb-3">
@@ -161,11 +171,6 @@
                 </div>
                 <button type="submit" name="regsiter" class="btn btn-primary w-100">Đăng Ký</button>
             </form>
-            <?php if ($tbsus != ""): ?>
-                <div class="alert alert-success mt-3" role="alert">
-                    <?php echo $tbsus; ?>
-                </div>
-            <?php endif; ?>
             <p class="text-center mt-3">Chưa có tài khoản? <a href="?wh=reg">Đăng ký</a></p>
         </div>
     </div>

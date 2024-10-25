@@ -90,7 +90,7 @@
             display: block;
         }
 
-        .account-dropdown a {
+        a {
             color: #343a40;
             text-decoration: none;
             padding: 10px 0;
@@ -116,7 +116,7 @@
     <header class="custom-header">
         <div class="container d-flex justify-content-between align-items-center py-3">
             <div class="logo">
-                <h1 class="h3" style="color:#8a4de8;">HuyDev</h1>
+                <a class="h3" style="color:#8a4de8;" href="?wh=">HuyDev</a>
             </div>
             <div class="search-bar w-50">
                 <input type="text" class="form-control" placeholder="Tìm kiếm sản phẩm...">

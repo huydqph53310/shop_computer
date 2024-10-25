@@ -47,9 +47,6 @@ class AdminController
                 $tbsus = "Đăng Ký tài khoản thành công";
                 $this->swuser->ActionQuery("INSERT", "createuser", $createUser);
             }
-            echo "<h6 style='color:red'>";
-            var_dump($createUser);
-            echo "</h6>";
         }
         include "project/app/view/LoginScr/RegsiterScr.php";
     }
