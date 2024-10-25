@@ -44,6 +44,7 @@ class AdminController
                 $tberr = "Các trường này là bắt buộc";
             }
             if ($tberr == "") {
+                $tbsus = "Đăng Ký tài khoản thành công";
                 $this->swuser->ActionQuery("INSERT", "createuser", $createUser);
             }
             echo "<h6 style='color:red'>";

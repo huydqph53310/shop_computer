@@ -97,7 +97,7 @@
                 <input type="text" class="form-control" placeholder="Tìm kiếm sản phẩm...">
             </div>
             <div class="user">
-                <a href="#" class="text-white">Tài khoản</a>
+                <a href="?wh=reg" class="text-white">Tài khoản</a>
             </div>
         </div>
     </header>
@@ -122,6 +122,7 @@
                     </li>
                 </ul>
             </div>
+
         </div>
     </nav>
 
