@@ -8,7 +8,7 @@ include_once "project/app/model/admin/SwitchQuery.php";
 // include_once "project/app/model/user/SwitchQueryUser.php";
 include_once "project/app/model/admin/usermanager/users.php";
 include_once "project/app/model/admin/usermanager/datauser.php";
-
+session_start();
 //controller
 include_once "project/app/controller/Admin/AdminController.php";
 //include_once "project/app/controller/Admin/SwitchQuery.php";

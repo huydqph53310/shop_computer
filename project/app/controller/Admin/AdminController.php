@@ -20,8 +20,27 @@ class AdminController
 
     public function Login()
     {
+        $tberr = "";
+        $tbsus = "";
         if (isset($_POST["Login"])) {
-            var_dump($_POST);
+            if ($_POST["username"] == "" || $_POST["password"] == "") {
+                $tberr = "Email, password Đang trống phải không?";
+            }
+            if ($tberr == "") {
+                $data = $this->swuser->Login($_POST["username"]);
+                if (($_POST["username"] ==  $data->username) && ($_POST["password"] == $data->password)) {
+                    $tbsus = "Đăng Nhập thành công";
+                    $_SESSION["username"] = $_POST["username"];
+                    header("locaion: ?wh=home");
+                } else {
+                    $tberr = "Thông tin tài khoản mật khẩu không chính sác!";
+                }
+                // echo $data->username;
+                // echo $data->password;
+
+                // var_dump($data->username);
+            }
+            // var_dump($_POST);
         }
         include "project/app/view/LoginScr/LoginScr.php";
     }

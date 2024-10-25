@@ -48,6 +48,20 @@ class SwitchQuery extends ConnectDatabase
             echo $e->getMessage();
         }
     }
+    public function Login($iduser)
+    {
+        try {
+            $sql = "SELECT email, username, password FROM `users` WHERE username like '%$iduser%'";
+            $this->connect->query("USE " . parent::DB_NAME);
+            $dataCheck = $this->connect->query($sql)->fetch();
+            if ($dataCheck != false) {
+                $userLogin = new users(null, null, $dataCheck["username"], $dataCheck["password"], $dataCheck["email"]);
+                return $userLogin;
+            }
+        } catch (Exception $e) {
+            echo $e->getMessage();
+        }
+    }
     public function DELETE($sql)
     {
         try {

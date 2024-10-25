@@ -133,8 +133,18 @@
     <!-- Main Content -->
     <div class="main-container">
         <div class="login-container">
+            <?php if ($tbsus != "") { ?>
+                <div class="alert alert-success mt-3" role="alert">
+                    <?php echo $tbsus; ?>
+                </div>
+            <?php } ?>
+            <?php if ($tberr != ""): ?>
+                <div class="alert alert-danger mt-3" role="alert">
+                    <?php echo $tberr; ?>
+                </div>
+            <?php endif; ?>
             <h2 class="login-title">Đăng nhập</h2>
-            <form id="loginForm" action="login.php" method="post">
+            <form id="loginForm" method="post">
                 <div class="mb-3">
                     <label for="Username" class="form-label">Username</label>
                     <input type="text" class="form-control" id="username" name="username">
@@ -147,7 +157,7 @@
                     <input type="checkbox" name="checkbox">
                     <span>đồng ý với <a href="" class="dieukhoan">điều khoản của công ty</a></span>
                 </div>
-                <button type="submit" class="btn btn-primary w-100">Đăng nhập</button>
+                <button type="submit" class="btn btn-primary w-100" name="Login">Đăng nhập</button>
             </form>
             <p class="text-center mt-3">Chưa có tài khoản? <a href="?wh=reg">Đăng ký</a></p>
         </div>
