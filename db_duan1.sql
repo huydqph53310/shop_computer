@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3307
--- Generation Time: Oct 25, 2024 at 05:53 PM
+-- Generation Time: Nov 05, 2024 at 03:53 AM
 -- Server version: 8.0.30
 -- PHP Version: 8.1.10
 
@@ -37,10 +37,10 @@ CREATE TABLE `bill` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `chitietbild`
+-- Table structure for table `chitietbill`
 --
 
-CREATE TABLE `chitietbild` (
+CREATE TABLE `chitietbill` (
   `id` int NOT NULL,
   `idkhachang` int NOT NULL,
   `listsanpham` int NOT NULL COMMENT 'Sản phẩm được gửi từ bill qua',
@@ -138,9 +138,9 @@ ALTER TABLE `bill`
   ADD KEY `idkhachang` (`idkhachang`);
 
 --
--- Indexes for table `chitietbild`
+-- Indexes for table `chitietbill`
 --
-ALTER TABLE `chitietbild`
+ALTER TABLE `chitietbill`
   ADD PRIMARY KEY (`id`),
   ADD KEY `idkhachang` (`idkhachang`),
   ADD KEY `idbill` (`idbill`);
@@ -183,9 +183,9 @@ ALTER TABLE `bill`
   MODIFY `id` int NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `chitietbild`
+-- AUTO_INCREMENT for table `chitietbill`
 --
-ALTER TABLE `chitietbild`
+ALTER TABLE `chitietbill`
   MODIFY `id` int NOT NULL AUTO_INCREMENT;
 
 --
@@ -223,11 +223,11 @@ ALTER TABLE `bill`
   ADD CONSTRAINT `bill_ibfk_1` FOREIGN KEY (`idkhachang`) REFERENCES `users` (`users_id`);
 
 --
--- Constraints for table `chitietbild`
+-- Constraints for table `chitietbill`
 --
-ALTER TABLE `chitietbild`
-  ADD CONSTRAINT `chitietbild_ibfk_1` FOREIGN KEY (`idkhachang`) REFERENCES `users` (`users_id`),
-  ADD CONSTRAINT `chitietbild_ibfk_2` FOREIGN KEY (`idbill`) REFERENCES `bill` (`id`);
+ALTER TABLE `chitietbill`
+  ADD CONSTRAINT `chitietbill_ibfk_1` FOREIGN KEY (`idkhachang`) REFERENCES `users` (`users_id`),
+  ADD CONSTRAINT `chitietbill_ibfk_2` FOREIGN KEY (`idbill`) REFERENCES `bill` (`id`);
 
 --
 -- Constraints for table `client`
